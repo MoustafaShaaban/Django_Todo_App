@@ -1,0 +1,23 @@
+{% load tailwind_filters %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="h-screen flex items-center justify-center bg-blue-500">
+    <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
+	    <div class="bg-white flex  rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">   
+            <p class="w-full text-grey-darkest text-xl text-center">Are you sure you want to delete {{ todo.title }}</p>
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="flex-no-shrink p-2 ml-2 border-2 rounded text-red-900 border-red hover:text-white hover:bg-red-400" type="submit">Delete</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

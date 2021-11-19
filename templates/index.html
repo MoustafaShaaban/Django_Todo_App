@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do's</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="h-screen flex items-center justify-center bg-blue-500">
+    <div class="h-auto mt-2 w-full flex items-center justify-center bg-teal-lightest font-sans">
+        <div class="bg-white rounded shadow p-6 m-4 w-full lg:max-w-lg">
+            <div class="mb-4">
+                <h1 class="text-gray-darkest text-center text-xl font-mono">My To-Do's</h1>
+                <div class="flex mt-4">
+                    <a href="{% url 'create-todo' %}" class="w-full flex justify-center p-2 border-2 rounded text-green-600 border-teal hover:text-white hover:bg-green-300" role="button">Add Todo</a>
+                </div>
+            </div>
+
+            
+            {% for todo in todos %}
+                <div>
+                    <div class="flex mb-4 items-center">
+                        <p class="font-mono text-lg">{{ todo.title }}</p>
+                        <button class="flex-no-shrink ml-auto p-2 ml-4 mr-2 border-2 rounded text-yellow-900 hover:text-white text-grey border-grey hover:bg-yellow-400">
+                            <a href="{% url 'update-todo' todo.pk %}">Update</a>
+                        </button>
+
+                        <button class="flex-no-shrink p-2 ml-2 border-2 rounded text-red-900 border-red hover:text-white hover:bg-red-400">
+                            <a href="{% url 'delete-todo' todo.pk %}">Delete</a>
+                        </button>
+                    </div>
+                </div>
+            {% endfor %}
+                
+        </div>
+    </div>
+</body>
+</html>
