@@ -1,6 +1,7 @@
 # Django_Todo_App
 
 A project built by Django web framework.
+Frontend template credit to nickkbasile and tailwindcomponents.com: https://tailwindcomponents.com/component/todo-list-app
 
 To get started with the project:
 
