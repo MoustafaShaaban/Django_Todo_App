@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="h-screen flex items-center justify-center bg-blue-500">
+    
+    {% block content %}
     <div class="h-auto mt-2 w-full flex items-center justify-center bg-teal-lightest font-sans">
         <div class="bg-white rounded shadow p-6 m-4 w-full lg:max-w-lg">
             <div class="mb-4">
@@ -35,5 +38,7 @@
                 
         </div>
     </div>
+    {% endblock content %}
+        
 </body>
 </html>
